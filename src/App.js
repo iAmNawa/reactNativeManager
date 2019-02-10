@@ -5,6 +5,7 @@ import { createStore } from 'redux';
 import firebase from 'firebase';
 import reducers from './reducers';
 import secrets from './secrets';
+import LoginForm from './components/LoginForm';
 
 export default class HelloWorldApp extends Component {
   componentWillMount() {
@@ -14,9 +15,7 @@ export default class HelloWorldApp extends Component {
   render() {
     return (
       <Provider store={createStore(reducers)}>
-        <View style={{ flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: 'white' }}>
-          <Text>Hello world!</Text>
-        </View>
+          <LoginForm />
       </Provider>
     );
   }
