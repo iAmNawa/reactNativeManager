@@ -15,7 +15,7 @@ export default class HelloWorldApp extends Component {
   render() {
     return (
       <Provider store={createStore(reducers)}>
-          <LoginForm />
+        <LoginForm />
       </Provider>
     );
   }
