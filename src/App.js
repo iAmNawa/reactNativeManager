@@ -6,6 +6,7 @@ import ReduxThunk from 'redux-thunk';
 import reducers from './reducers';
 import secrets from './secrets';
 import LoginForm from './components/LoginForm';
+import Router from './Router';
 
 export default class HelloWorldApp extends Component {
   componentWillMount() {
@@ -16,7 +17,7 @@ export default class HelloWorldApp extends Component {
     const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
     return (
       <Provider store={store}>
-        <LoginForm />
+        <Router />
       </Provider>
     );
   }
