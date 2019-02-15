@@ -4,7 +4,7 @@ import { View, Text } from 'react-native';
 class EmployeeList extends Component {
   render() {
     return (
-      <View>
+      <View style={styles.employeeStyle}>
         <Text>Employee List</Text>
         <Text>Employee List</Text>
         <Text>Employee List</Text>
@@ -14,5 +14,11 @@ class EmployeeList extends Component {
     );
   }
 }
+
+const styles = {
+  employeeStyle: {
+    marginTop: 0
+  }
+};
 
 export default EmployeeList;
