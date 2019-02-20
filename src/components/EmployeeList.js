@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { ListView, View, Text } from 'react-native';
 import { employeesFetch } from '../actions';
+import ListItem from './ListItem';
 
 class EmployeeList extends Component {
   componentWillMount() {
@@ -21,23 +22,26 @@ class EmployeeList extends Component {
     this.dataSource = ds.cloneWithRows(employees);
   }
 
+  renderRow(employee) {
+    return <ListItem employee={employee} />;
+  }
+
   render() {
     console.log(this.props)
     return (
-      <View style={styles.employeeStyle}>
-        <Text>Employee List</Text>
-        <Text>Employee List</Text>
-        <Text>Employee List</Text>
-        <Text>Employee List</Text>
-        <Text>Employee List</Text>
-      </View>
+      <ListView
+        style={styles.employeeStyle}
+        enableEmptySections
+        dataSource={this.dataSource}
+        renderRow={this.renderRow}
+      />
     );
   }
 }
 
 const styles = {
   employeeStyle: {
-    marginTop: 0
+    marginTop: 65
   }
 };
 
