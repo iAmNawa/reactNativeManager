@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import EmployeeForm from './EmployeeForm';
 import { employeeUpdate } from '../actions';
-import { Card, CardSection, Button } from './common';
+import { Card, CardSection, Input, Button } from './common';
 
 class EmployeeEdit extends Component {
   componentWillMount() {
@@ -20,6 +20,9 @@ class EmployeeEdit extends Component {
   render() {
     return (
       <Card>
+        <CardSection>
+          <Input></Input>
+        </CardSection>
         <EmployeeForm />
         <CardSection>
           <Button onPress={this.onButtonPress.bind(this)}>
